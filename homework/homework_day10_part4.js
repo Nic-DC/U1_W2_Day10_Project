@@ -9,6 +9,7 @@ halfTree(3)
 **
 ***
 */
+console.log("<<< Exercise 21: >>>");
 
 /* EXERCISE 22
 Create a function called "tree" which receives a number as a parameter 
@@ -19,11 +20,13 @@ tree(3)
 ***
 *****
 */
+console.log("<<< Exercise 22: >>>");
 
 /* EXERCISE 23
 Create a function called "isItPrime" that receives a number as a parameter 
 and returns true if the given number is a prime number.
 */
+console.log("<<< Exercise 23: >>>");
 
 /* WHEN YOU ARE FINISHED
 Commit and push the code to your personal GitHub repository; then post 
