@@ -10,6 +10,16 @@ halfTree(3)
 ***
 */
 console.log("<<< Exercise 21: >>>");
+const halfTree = (nr) => {
+  let symb = "";
+  const unique = "*";
+  for (let i = 0; i < nr; i++) {
+    //console.log(symb);
+    symb = symb + unique;
+    console.log(symb);
+  }
+};
+console.log(halfTree(7));
 
 /* EXERCISE 22
 Create a function called "tree" which receives a number as a parameter 
@@ -21,13 +31,68 @@ tree(3)
 *****
 */
 console.log("<<< Exercise 22: >>>");
+const tree = (nr) => {
+  let symb = "";
+  const unique = "**";
+  for (let i = 0; i < nr; i++) {
+    //console.log(symb);
+    if (symb === "") {
+      symb = unique.slice(1);
+      console.log(symb);
+    } else {
+      symb = symb + unique;
+      console.log(symb);
+    }
+  }
+};
+console.log(tree(5));
 
 /* EXERCISE 23
 Create a function called "isItPrime" that receives a number as a parameter 
 and returns true if the given number is a prime number.
 */
-console.log("<<< Exercise 23: >>>");
 
+console.log("<<< Exercise 23: >>>");
+const isItPrime = (nr) => {
+  if (typeof nr !== "number") {
+    return `Please, only input numbers!`;
+  } else {
+    for (let i = 2, square = Math.sqrt(nr); i <= square; i++) {
+      if (nr % i === 0) {
+        return `The inputted number is NOT prime`;
+      } else {
+        return `The inputted number is prime`;
+      }
+    }
+  }
+};
+const isPrime = (num) => {
+  for (let i = 2, s = Math.sqrt(num); i <= s; i++)
+    if (num % i === 0) return false;
+  return num > 1;
+};
+// i believe it does NOT work with large numbers
+console.log(isItPrime(8824393));
+console.log(isItPrime(8824397));
+console.log(isItPrime(7587));
+console.log(isItPrime(890));
+console.log(isItPrime("true"));
+console.log(isItPrime(true));
+
+// function isPrime(num) {
+//   var sqrtnum = Math.floor(Math.sqrt(num));
+//   var prime = num != 1;
+//   for (var i = 2; i < sqrtnum + 1; i++) {
+//     // sqrtnum+1
+//     if (num % i == 0) {
+//       prime = false;
+//       break;
+//     }
+//   }
+//   return prime;
+// }
+
+console.log(isPrime(8824397));
 /* WHEN YOU ARE FINISHED
 Commit and push the code to your personal GitHub repository; then post 
 the link of your commit on the Homework section of today’s Eduflow.

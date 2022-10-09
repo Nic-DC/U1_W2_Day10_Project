@@ -65,15 +65,16 @@ const oldestMovie = (array) => {
     if (array[i - 1].release < array[i].release) {
       console.log(array[i - 1].release);
       console.log(array[i].release);
-      oldestMovieYear = array[i].release;
-      oldestMovieName = array[i].name;
-    } else if (array[0] > oldestMovieYear) {
-      oldestMovie = array[0].release;
-      oldestMovieName = array[0].name;
+      oldestMovieYear = array[i - 1].release;
+      oldestMovieName = array[i - 1].name;
+      // } else if (array[0] > oldestMovieYear) {
+      //   oldestMovie = array[0].release;
+      //   oldestMovieName = array[0].name;
+      // }
     }
+    resultArray.push(oldestMovieName, oldestMovieYear);
+    return resultArray;
   }
-  resultArray.push(oldestMovieName, oldestMovieYear);
-  return resultArray;
 };
 console.log(oldestMovie(moviesArray));
 /* EXERCISE 13
