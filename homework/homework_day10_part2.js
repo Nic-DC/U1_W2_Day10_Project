@@ -61,14 +61,37 @@ Write a function called isThisAnEmail which receives a string as a parameter and
 returns true if the string is a valid email address.
 */
 console.log("<<< Exercise 6: >>>");
-const isThisAnEmail = (string) => {};
+const isThisAnEmail = (string) => {
+  return String(string)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+console.log(isThisAnEmail("dc.sdg@gmail.com"));
 
 /* EXERCISE 7
 Write a function called whatDayIsIt that should return the current day of the week.
 */
 console.log("<<< Exercise 7: >>>");
-const whatDayIsIt = () => {};
+const whatDayIsIt = () => {
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const newDate = new Date();
+  console.log({ newDate });
+  const today = newDate.getDay();
+  console.log({ today });
+  return `Today is: ${daysOfWeek[today]}`;
+};
 console.log(whatDayIsIt());
+
 /* EXERCISE 8
 Write a function called rollTheDices which receives a number as a parameter.
 It should invoke the dice() function defined in Ex1 the specified amount of times,
@@ -80,12 +103,28 @@ values: [3, 3, 4]
 }
 */
 console.log("<<< Exercise 8: >>>");
+const rollTheDices = (nr) => {
+  let randomDice = 0;
+  const obj = {
+    values: [],
+    sum: 0,
+  };
+  for (let i = 0; i < nr; i++) {
+    randomDice = dice();
+    obj.values.push(randomDice);
+    obj.sum += randomDice;
+  }
+  return obj;
+};
+console.log(rollTheDices(3));
 
 /* EXERCISE 9
 Write a function called howManyDays which receives a date as a parameter 
 and returns the number of days passed since that date.
 */
 console.log("<<< Exercise 9: >>>");
+const howManyDays = (date) => {};
+console.log(howManyDays(3));
 
 /* EXERCISE 10
 Write a function called isTodayMyBirthday which should return true if 
